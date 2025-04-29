@@ -99,17 +99,40 @@ npm run dev
 
 ### 后端测试
 
+后端使用Go的内置测试框架进行单元测试。测试文件为`backend/calculator_service_test.go`。
+
+测试内容包括：
+- 加法运算测试（正数、负数、零值、小数）
+- 减法运算测试（正数、负数、零值、小数）
+- 乘法运算测试（正数、负数、零值、小数）
+- 除法运算测试（正数、负数、小数、除以零错误处理）
+
+运行后端测试：
+
 ```bash
 cd backend
-go test ./...
+go test -v
 ```
 
 ### 前端测试
+
+前端使用Jest和React Testing Library进行单元测试。测试文件位于`frontend/calculator-client/__tests__/`目录中。
+
+测试内容包括：
+- UI组件渲染测试
+- 用户输入交互测试
+- 运算符选择测试
+- API调用和结果展示测试
+- 错误处理测试
+
+运行前端测试：
 
 ```bash
 cd frontend/calculator-client
 npm test
 ```
+
+我们采用模拟(mock)技术隔离了前端对后端API的依赖，使得测试可以独立运行，不依赖后端服务。
 
 ## 开发指南
 
@@ -173,9 +196,19 @@ npm test
 
 ## 单元测试
 
+我们为前端和后端代码都编写了全面的单元测试，确保计算器功能的正确性和稳定性。
+
+详细的测试文档请查看：[TESTING.md](./TESTING.md)
+
 ### 后端测试
 
 后端使用Go的内置测试框架进行单元测试。测试文件为`backend/calculator_service_test.go`。
+
+测试内容包括：
+- 加法运算测试（正数、负数、零值、小数）
+- 减法运算测试（正数、负数、零值、小数）
+- 乘法运算测试（正数、负数、零值、小数）
+- 除法运算测试（正数、负数、小数、除以零错误处理）
 
 运行后端测试：
 
@@ -188,9 +221,18 @@ go test -v
 
 前端使用Jest和React Testing Library进行单元测试。测试文件位于`frontend/calculator-client/__tests__/`目录中。
 
+测试内容包括：
+- UI组件渲染测试
+- 用户输入交互测试
+- 运算符选择测试
+- API调用和结果展示测试
+- 错误处理测试
+
 运行前端测试：
 
 ```bash
 cd frontend/calculator-client
 npm test
-``` 
+```
+
+我们采用模拟(mock)技术隔离了前端对后端API的依赖，使得测试可以独立运行，不依赖后端服务。 

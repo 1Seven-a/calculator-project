@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package calculator.v1;
+
+option go_package = "calculator/gen/proto;calculatorv1";
+
+// 计算器服务
+service CalculatorService {
+  // 加法操作
+  rpc Add(AddRequest) returns (CalculateResponse) {}
+  // 减法操作
+  rpc Subtract(SubtractRequest) returns (CalculateResponse) {}
+  // 乘法操作
+  rpc Multiply(MultiplyRequest) returns (CalculateResponse) {}
+  // 除法操作
+  rpc Divide(DivideRequest) returns (CalculateResponse) {}
+}
+
+// 加法请求
+message AddRequest {
+  double a = 1;
+  double b = 2;
+}
+
+// 减法请求
+message SubtractRequest {
+  double a = 1;
+  double b = 2;
+}
+
+// 乘法请求
+message MultiplyRequest {
+  double a = 1;
+  double b = 2;
+}
+
+// 除法请求
+message DivideRequest {
+  double a = 1;
+  double b = 2;
+}
+
+// 计算结果响应
+message CalculateResponse {
+  double result = 1;
+  string error = 2;
+} 

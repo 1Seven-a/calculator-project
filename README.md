@@ -169,4 +169,28 @@ npm test
 
 ## 许可证
 
-本项目基于 MIT 许可证 - 详情请查看 LICENSE 文件。 
+本项目基于 MIT 许可证 - 详情请查看 LICENSE 文件。
+
+## 单元测试
+
+### 后端测试
+
+后端使用Go的内置测试框架进行单元测试。测试文件为`backend/calculator_service_test.go`。
+
+运行后端测试：
+
+```bash
+cd backend
+go test -v
+```
+
+### 前端测试
+
+前端使用Jest和React Testing Library进行单元测试。测试文件位于`frontend/calculator-client/__tests__/`目录中。
+
+运行前端测试：
+
+```bash
+cd frontend/calculator-client
+npm test
+``` 

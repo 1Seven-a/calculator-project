@@ -1,0 +1,14 @@
+{
+  "name": "calculator-project",
+  "version": "1.0.0",
+  "description": "计算器项目",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd frontend/calculator-client && npm run dev",
+    "build": "cd frontend/calculator-client && npm run build",
+    "start": "cd frontend/calculator-client && npm run start",
+    "test": "cd frontend/calculator-client && npm run test"
+  },
+  "author": "",
+  "license": "ISC"
+} 
